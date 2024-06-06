@@ -1,0 +1,71 @@
+body {
+  font-family: 'Baloo 2', sans-serif;
+}
+
+footer {
+  margin: 0;
+  padding: 10px 0px;
+  text-align: center;
+  background: #DADADA;
+  width: 100%;
+  bottom: 0;
+  color: #454545;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+footer a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #0066FF;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#footer .social {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+#footer .social li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+#footer .social li a {
+  font-size: 18px;
+  color: #0082FC;
+}
+
+.cd-headline.slide .cd-words-wrapper {
+  color: #02bdd5;
+}
+
+ul.social-icons {
+  height: auto;
+  overflow: hidden;
+  list-style: none !important;
+  margin-bottom: 10px;
+}
+
+ul.social-icons li {
+  float: none;
+  display: inline-block;
+  height: 36px;
+}
+
+#copyright a:hover, #copyright nav .menu li a:hover {
+  color: #e4e4e4 !important;
+}
+
+#copyright a {
+  text-decoration: none;
+}
+
+#copyright a:hover {
+  text-decoration: none;
+}

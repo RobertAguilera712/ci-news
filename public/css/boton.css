@@ -1,0 +1,18 @@
+.play{
+    display:block;
+    background-size:80px 80px;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    width:100px;
+    height:100px;
+    border:9px dashed #0d6efd;
+    border-radius:40%;
+    box-sizing:border-box;
+    transition:0.125s ease;
+    margin: auto;
+    }
+  
+  .play:hover{background-size:30px 30px;
+    border:10px solid #0d6dfdac;
+  }
+  

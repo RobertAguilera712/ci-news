@@ -1,0 +1,42 @@
+#footer .social {
+    text-align: right;
+    margin-bottom: 0;
+  }
+  
+
+  #footer {
+    margin-top:  50px;
+  }
+  #footer .social li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  #footer .social li a {
+    font-size: 22px;
+    color: #0082FC;
+  }
+  footer {
+    margin: 0;
+    padding: 80px 0px;
+    text-align: center;
+    background: #DADADA;
+    width: 100%;
+    bottom: 0;
+    color: #454545;
+  }
+  
+  footer p {
+    font-size: 12px;
+  }
+  
+  footer a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #0066FF;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

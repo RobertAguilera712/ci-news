@@ -1,0 +1,180 @@
+.wrapper{
+	width: 100%;
+	margin-top: 100px;
+	background: #fff;
+	padding: 30px 0;
+}
+.testimonial-text{
+	padding: 10px 120px;
+}
+
+.testimonial-text p{
+	font-family: "Open sans";
+	font-size: 25px;
+	font-weight: 400;
+	font-style: italic;
+	text-align: center;
+	color: #454545;
+}
+
+.ripple-background{
+
+	opacity: 50%;
+}
+.circle{
+	position: absolute;
+	border-radius: 100%;
+	background:  linear-gradient(147deg, #FF5AC8 10%, #0066FF 30%, #C8C8AA 100%) ;
+	animation: ripple 9s infinite;
+	box-shadow: 0px 0px 1px 0px #508fb9;
+  }
+  
+  .small{
+	width: 200px;
+	height: 200px;
+	left: -100px;
+	bottom: -500px;
+  }
+  
+  .medium{
+	width: 400px;
+	height: 400px;
+	left: -200px;
+	bottom: -600px;
+  }
+  
+  .large{
+	width: 600px;
+	height: 600px;
+	left: -300px;
+	bottom: -700px;
+  }
+  
+  .xlarge{
+	width: 800px;
+	height: 800px;
+	left: -400px;
+	bottom: -800px;
+  }
+  
+  .xxlarge{
+	width: 1000px;
+	height: 1000px;
+	left: -500px;
+	bottom: -900px;
+  }
+  
+  .shade1{
+	opacity: 0.2;
+  }
+  .shade2{
+	opacity: 0.5;
+  }
+  
+  .shade3{
+	opacity: 0.7;
+  }
+  
+  .shade4{
+	opacity: 0.8;
+  }
+  
+  .shade5{
+	opacity: 0.9;
+  }
+  
+  @keyframes ripple{
+	0%{
+	  transform: scale(0.8);
+	}
+	
+	50%{
+	  transform: scale(1.2);
+	}
+	
+	100%{
+	  transform: scale(0.8);
+	}
+  }
+  #home {
+	clip-path: url(#cache);
+  }
+  
+  #red {
+	fill: none;
+	opacity: 0.15;
+	stroke: #CE1B5F;
+	stroke-width: 12;
+	stroke-miterlimit:10;
+	animation: show 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out; 
+  }
+  
+  #blue {
+	fill: none;
+	opacity: 0.15;
+	stroke: #06A1C4;
+	stroke-width: 12;
+	stroke-miterlimit:10;
+	animation: show 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+  }
+  
+  #light-blue {
+	fill: none;
+	opacity: 0.15;
+	stroke: #06A1C4;
+	stroke-width: 6;
+	stroke-miterlimit:10;
+	stroke-dasharray: 200;
+	stroke-dashoffset: 800;
+	animation: draw 4s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;    
+  }
+  
+  @keyframes draw {
+	to {
+	  stroke-dashoffset: 0;
+   }
+	  }
+  
+  @keyframes show {
+	0% {
+	  opacity: 0.15;
+   }
+	50% {
+	  opacity: 0.2;
+   }
+	100% {
+	  opacity: 0.15;
+   }
+	  }
+  
+.texto2{
+	position: absolute;
+	top:90%;
+	right: 10%;
+	font-size: 12px;
+}	
+
+#fondo {
+
+	position: absolute;
+	z-index: -1;
+}
+
+.about {
+	z-index: 99;
+}
+
+body{
+	min-height: 100%;
+}
+
+
