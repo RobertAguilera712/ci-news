@@ -6,7 +6,7 @@
         protected $table ='documentos_cendoc';
         protected $primaryKey ='id_documento';
         protected $allowedFields = ['nombre_documento', 
-        'autor_documento', 'descripcion_documento','fecha_documento', 
+        'autor_documento', 'palabras_clave', 'descripcion_documento','fecha_documento', 
         'id_categoria_cendoc', 'archivo_documento','estatus_documento', 'fecha_modificacion'];
 
        public function createDoc($data){

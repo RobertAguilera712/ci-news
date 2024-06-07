@@ -35,6 +35,10 @@
                                 <input type="text" maxlength="255" class="form-control" name="autor" id="autor" required />
                             </div>
                             <div class="form-group">
+                                <label class="col-form-label">Palabras clave:</label>
+                                <input type="text" maxlength="255" class="form-control" name="palabras_clave" id="autor" required />
+                            </div>
+                            <div class="form-group">
                                 <label class="col-form-label">Fecha del documento:</label>
                                 <input type="date" class="form-control" name="fecha" id="fecha" required />
                             </div>
@@ -98,6 +102,7 @@
                                             <th>Descripción</th>
                                             <th>Fecha</th>
                                             <th>Categoría</th>
+                                            <th>Palabras clave</th>
                                             <th>Archivo</th>
                                             <th>Estatus</th>
                                             <th>Fecha última modificación</th>
@@ -116,6 +121,7 @@
                                                 <td><?= $d['descripcion_documento']; ?></th>
                                                 <td><?= $d['fecha_documento']; ?></th>
                                                 <td><?= $d['nombre_categoria_cendoc']; ?></th>
+                                                <td><?= $d['palabras_clave']; ?></th>
                                                 <th><?php if ($d['archivo_documento'] == !null) : ?><a href="<?php echo base_url('documentos_cendoc/' . $d['id_documento'] . '/' . $d['archivo_documento']) ?>" download="<?php $d['archivo_documento'] ?>" class="btn btn-success btn-sm">
                                                             Descargar</a><?php endif ?></th>
                                                 <th><?php if ($d['estatus_documento'] == 'A') : ?>
@@ -415,7 +421,15 @@
         }
     </script>
     <script>
-        new DataTable('#dataTable');
+        $(document).ready(function() {
+            new DataTable('#dataTable', {
+                "order": [
+                    [4, "desc"]
+                ],
+                "columnDefs": [{"type": "date", "targets": 4}]
+            });
+        });
+        // new DataTable('#dataTable');
         new DataTable('#dataTableFisicos');
         new DataTable('#dataTableCategorias');
     </script>

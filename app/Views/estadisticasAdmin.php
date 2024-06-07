@@ -363,7 +363,15 @@
         }
     </script>
     <script>
-        new DataTable('#dataTable');
+        $(document).ready(function() {
+            new DataTable('#dataTable', {
+                "order": [
+                    [2, "desc"]
+                ],
+                "columnDefs": [{"type": "date", "targets": 2}]
+            });
+        });
+        // new DataTable('#dataTable');
     </script>
 </body>
 

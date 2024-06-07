@@ -40,6 +40,7 @@ class Cendoc extends BaseController
 
         $nombre = $this->request->getPost('nombre');
         $autor = $this->request->getPost('autor');
+        $palabras_clave = $this->request->getPost('palabras_clave');
         $fecha = $this->request->getPost('fecha');
         $id_categoria = $this->request->getPost('id_categoria');
         $archivo_documento = $this->request->getPost('archivo_documento');
@@ -55,6 +56,7 @@ class Cendoc extends BaseController
                     [
                         'nombre_documento' => $nombre,
                         'autor_documento' => $autor,
+                        'palabras_clave' => $palabras_clave,
                         'fecha_documento' => $fecha,
                         'id_categoria_cendoc' => $id_categoria,
                         'archivo_documento' => $archivo_documento,
@@ -145,27 +147,37 @@ class Cendoc extends BaseController
     public function updateDoc($id)
     {
 
-        $id_categoria_cendoc = $this->request->getPost('id_categoria_cendoc');
+        $nombre_documento = $this->request->getPost('nombre_documento');
+        $autor_documento = $this->request->getPost('autor_documento');
+        $descripcion_documento = $this->request->getPost('descripcion_documento');
+        $palabras_clave = $this->request->getPost('palabras_clave');
+        $fecha_documento = $this->request->getPost('fecha_documento');
         $archivo_documento = $this->request->getPost('archivo_documento');
+        $estatus_documento = $this->request->getPost('estatus_documento');
+        $id_categroia_cendoc = $this->request->getPost('id_categoria_cendoc');
 
         if ($archivo_documento == !null) {
             $datos = [
                 // "fecha_modificacion" => date(DB_FORMAT_DATE),
-                "nombre_documento" => $_POST['nombre_documento'],
-                "descripcion_documento" => $_POST['descripcion_documento'],
-                "fecha_documento" => $_POST['fecha_documento'],
+                "nombre_documento" => $nombre_documento,
+                "autor_documento" => $autor_documento,
+                "descripcion_documento" => $descripcion_documento,
+                "palabras_clave" => $palabras_clave,
+                "fecha_documento" => $fecha_documento,
                 "archivo_documento" => $archivo_documento,
-                "estatus_documento" => $_POST['estatus_documento'],
-                "id_categoria_cendoc" => $id_categoria_cendoc
+                "estatus_documento" => $estatus_documento,
+                "id_categoria_cendoc" => $id_categroia_cendoc
             ];
         } else {
             $datos = [
                 // "fecha_modificacion" => date(DB_FORMAT_DATE),
-                "nombre_documento" => $_POST['nombre_documento'],
-                "descripcion_documento" => $_POST['descripcion_documento'],
-                "fecha_documento" => $_POST['fecha_documento'],
-                "estatus_documento" => $_POST['estatus_documento'],
-                "id_categoria_cendoc" => $id_categoria_cendoc
+                "nombre_documento" => $nombre_documento,
+                "autor_documento" => $autor_documento,
+                "descripcion_documento" => $descripcion_documento,
+                "palabras_clave" => $palabras_clave,
+                "fecha_documento" => $fecha_documento,
+                "estatus_documento" => $estatus_documento,
+                "id_categoria_cendoc" => $id_categroia_cendoc
             ];
         }
 

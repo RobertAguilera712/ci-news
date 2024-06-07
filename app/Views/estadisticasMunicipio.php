@@ -106,7 +106,8 @@ $pdf = $municipios[46]['pdf'];
             new DataTable('#dataTableDocumentos', {
                 "order": [
                     [1, "desc"]
-                ]
+                ],
+                "columnDefs": [{"type": "date", "targets": 1}]
             });
         });
     </script>

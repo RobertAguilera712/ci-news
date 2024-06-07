@@ -127,6 +127,7 @@
                                     <th>Autor</th>
                                     <th>Fecha</th>
                                     <th>Categoría</th>
+                                    <th>Palabras clave</th>
                                     <th>Archivo</th>
                                 </tr>
                             </thead>
@@ -138,13 +139,14 @@
                                         <td><?= $item['autor_documento'] ?></td>
                                         <td><?php $fecha = $item['fecha_documento'];
                                             if ($fecha == !NULL) {
-                                                $nuevaFecha = date("d-m-Y", strtotime($fecha));
+                                                $nuevaFecha = date("Y-m-d", strtotime($fecha));
                                                 echo $nuevaFecha;
                                             } else {
                                                 echo "Sin fecha";
                                             }
                                             ?></td>
                                         <td><?= $item['nombre_categoria_cendoc']; ?></td>
+                                        <td><?= $item['palabras_clave']; ?></td>
                                         <td><?php if ($item['archivo_documento'] == !null) : ?>
                                                 <a href="<?php echo base_url('documentos_cendoc/' . $item['id_documento'] . '/' . $item['archivo_documento']) ?>" target="_blank" class="btn btn-success btn-lg" style="margin: 5px; font-size: .9rem;">Ver documento</a>
                                             <?php endif ?>
@@ -336,8 +338,21 @@
     </script>
 
     <script>
-        new DataTable('#digitales');
-        new DataTable('#fisicos');
+
+        $(document).ready(function() {
+            new DataTable('#digitales', {
+                "order": [
+                    [2, "desc"]
+                ],
+                "columnDefs": [{"type": "date", "targets": 2}]
+            });
+            new DataTable('#fisicos', {
+                "order": [
+                    [2, "desc"]
+                ],
+                "columnDefs": [{"type": "date", "targets": 2}]
+            });
+        });
         $(document).ready(function() {
             $('#CENDOCDigital').on('shown.bs.modal', function() {
                 $.ajax({

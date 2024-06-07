@@ -83,9 +83,9 @@ $estatus_archivo = $datos[0]['estatus_archivo'];
                         <div class="form-group">
                             <label class="col-form-label">Seleccione el municipio:</label>
                             <select class="form-select form-control form-input" name="id_municipio" value="<?= $id_municipio ?>" required>
-                                <option disabled value="<?= $id_municipio ?>"><?php echo $nombre ?></option>
+                                <!-- <option disabled value="<?= $id_municipio ?>"><?php echo $nombre ?></option> -->
                                 <?php foreach ($municipios as $t) : ?>
-                                    <option value="<?= $t['id_municipio']; ?>"><?= $t['nombre']; ?></option>
+                                    <option  <?php echo $t["id_municipio"] == $id_municipio ? "selected" : ""; ?> value="<?= $t['id_municipio']; ?>"><?= $t['nombre']; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
