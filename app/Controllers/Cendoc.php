@@ -182,7 +182,7 @@ class Cendoc extends BaseController
         }
 
 
-        $id = $_POST['id_documento'];
+        $id = $this->request->getPost('id_documento');
 
         $documentoObj = new Documentos();
 
