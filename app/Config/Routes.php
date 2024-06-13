@@ -116,6 +116,16 @@ $routes->group('/',['Cendoc' => 'App\Controllers'], function($routes){
 $routes->get('/centro_documental', 'Centro_documental::ByNombre');
 $routes->post('/centro-documental', 'Centro_documental::ByNombre');
 
+// $routes->group('/banco-datos', ['namespace' => 'App\Controllers'], function($routes) {
+//     // Index route
+//     $routes->get('/', 'BancoDatos::index');
+
+//     // Example route '/banco-datos/a'
+//     $routes->get('/a', 'BancoDatos::a'); // Replace 'a' with your actual method name in BancoDatos controller
+// });
+
+$routes->get('/banco-datos', 'BancoDatos::index');
+$routes->post('/banco-datos/create-categoria', 'BancoDatos::createCategoria');
 
 // Revista
 $routes->get('/revistas', 'Revistas::index');

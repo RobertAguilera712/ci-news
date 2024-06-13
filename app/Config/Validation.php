@@ -170,6 +170,17 @@ class Validation extends BaseConfig
 
     ];
 
+    public $categoria_banco_datos = [
+        'nombre' => 'required|max_length[255]',
+    ];
+
+    public $categoria_banco_datos_errors = [
+        'nombre' => [
+            'required' => 'El campo Nombre es obligatorio.',
+            'max_length' => 'El campo Nombre no puede exceder los 255 caracteres.',
+        ],
+    ];
+
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------
