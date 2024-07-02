@@ -1,0 +1,2 @@
+git diff --name-only --cached > staged_files.txt
+zip -@ staged_files.zip < staged_files.txt           
