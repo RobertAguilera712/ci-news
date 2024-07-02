@@ -47,6 +47,20 @@
                         </a>
                     </div>
                 <?php endforeach; ?>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-auto" style="margin: 10px 0 10px 0;">
+                    <div class="card shadow-lg">
+                        <a class="btn btn-light" href="<?= base_url('public/images/convocatoria-revista.pdf'); ?>" target="_blank" type="button">
+                            <div class="card-body">
+                                <div class="row" style="margin-bottom: 10px;">
+                                    <img class="img-fluid img-revista" style="max-width: 100%; min-width: 100%;" src="<?= base_url('public/images/convocatoria-revista.jpg'); ?>" alt="JuventudEsGto">
+                                    <h4 class="card-title">Convocatoria volumen III</h4>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    </a>
+                </div>
 
             </div>
 

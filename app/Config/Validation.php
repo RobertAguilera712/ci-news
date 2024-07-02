@@ -174,11 +174,26 @@ class Validation extends BaseConfig
         'nombre' => 'required|max_length[255]',
     ];
 
+    public $subcategoria_banco_datos = [
+        'nombre' => 'required|max_length[255]',
+        'id_categoria_banco_datos' => 'required',
+    ];
+
     public $categoria_banco_datos_errors = [
         'nombre' => [
             'required' => 'El campo Nombre es obligatorio.',
             'max_length' => 'El campo Nombre no puede exceder los 255 caracteres.',
         ],
+    ];
+
+    public $doc_banco = [
+        'nombre' => 'required|max_length[255]',
+        'autor' => 'required|max_length[255]',
+        'dependencia' => 'required|max_length[255]',
+        'pais' => 'required|max_length[255]',
+        'palabras_clave' => 'required|max_length[255]',
+        'id_categoria' => 'required|integer',
+        'id_subcategoria' => 'required|integer'
     ];
 
     //--------------------------------------------------------------------

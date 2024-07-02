@@ -35,7 +35,7 @@ class Login extends BaseController
             if($datosUsuario['usuario'] == 'investigador'){
                 $session = session();
                 $session->set($data);  
-                return redirect()->to(base_url('/estudios'));
+                return redirect()->to(base_url('/banco-datos'));
 
             }else if($datosUsuario['usuario'] == 'administrador'){
                 $session = session();

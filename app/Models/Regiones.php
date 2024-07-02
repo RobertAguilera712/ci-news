@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CategoriasBancoDatos extends Model
+class Regiones extends Model
 {
-    protected $table = 'categorias_banco_datos';
+    protected $table = 'regiones';
     protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
 
@@ -24,21 +24,27 @@ class CategoriasBancoDatos extends Model
      */
     public function getAll()
     {
-        return $this->findAll();
+        $query = "SELECT r.id, r.nombre, r.estatus, r.fecha_modificacion, STRING_AGG(m.nombre, ', ') AS municipios
+                    FROM regiones r
+                    LEFT JOIN regiones_municipios rm ON r.id = rm.id_region
+                    LEFT JOIN municipio m ON rm.id_municipio = m.id_municipio 
+                    GROUP BY r.id, r.nombre, r.estatus , r.fecha_modificacion ;";
+        $queryResult = $this->db->query($query)->getResult();
+
+        return $queryResult ;
     }
-
-    public function getSubcategories($id)
-    {
-        $query = "SELECT * FROM subcategorias_banco_datos sbd WHERE sbd.id_categoria_banco_datos  = ?;";
-
-        $queryResult = $this->db->query($query, [$id])->getResult();
-        return $queryResult;
-    }
-
 
     public function getById($id)
     {
-        return $this->find($id);
+        $query = "SELECT r.id, r.nombre, r.estatus, r.fecha_modificacion AS nombre_region, STRING_AGG(m.id_municipio, ',') AS municipios
+                    FROM regiones r
+                    LEFT JOIN regiones_municipios rm ON r.id = rm.id_region
+                    LEFT JOIN municipio m ON rm.id_municipio = m.id_municipio 
+                    WHERE r.id = ?
+                    GROUP BY r.id, r.nombre, r.estatus , r.fecha_modificacion;";
+
+        $queryResult = $this->db->query($query, [$id])->getResult();
+        return $queryResult;
     }
 
     /**

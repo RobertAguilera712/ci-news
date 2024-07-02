@@ -50,7 +50,7 @@ $routes->add('/acceso-denegado', 'Login::accesoDenegado');
 
 //Administrador
 $routes->add('/crear_cuenta', 'Crear_cuenta::index',  ['filter' => 'sessionAdministrador']);
-$routes->post('/guardar','Crear_cuenta::guardar',  ['filter' => 'sessionAdministrador']);
+$routes->post('/guardar', 'Crear_cuenta::guardar',  ['filter' => 'sessionAdministrador']);
 $routes->add('/administradorEdit', 'AdministradorEdit::index',  ['filter' => 'sessionAdministrador']);
 $routes->get('/administradorEdit/obtener/(:any)', 'AdministradorEdit::obtener/$1',  ['filter' => 'sessionAdministrador']);
 $routes->add('/administrador', 'Administrador::index',  ['filter' => 'sessionAdministrador']);
@@ -77,27 +77,26 @@ $routes->post('administradorIntegrante/updateIntegrante/', 'SajgAdmin::updateInt
 
 
 // Archivos
-$routes->group('/',['MunicipiosAdmin' => 'App\Controllers'], function($routes){
+$routes->group('/', ['MunicipiosAdmin' => 'App\Controllers'], function ($routes) {
     $routes->get('/municipios-admin/editArchivo/(:any)', 'MunicipiosAdmin::editArchivo/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('/municipios-admin/createArchivo', 'MunicipiosAdmin::createArchivo',  ['filter' => 'sessionAdministrador']);
     $routes->post('/municipios-admin/updateArchivo', 'MunicipiosAdmin::updateMunicipioArchivo/$1',  ['filter' => 'sessionAdministrador']);
 
-    $routes->add('/municipios-admin', 'MunicipiosAdmin::index', ['filter'=> 'sessionInvestigador']);
-    $routes->get('/municipios-admin', 'MunicipiosAdmin::index', ['filter'=> 'sessionInvestigador']);
-    $routes->add('/archivos-admin', 'MunicipiosAdmin::estadisticas', ['filter'=> 'sessionInvestigador']);
-    $routes->get('/archivos-admin', 'MunicipiosAdmin::estadisticas', ['filter'=> 'sessionInvestigador']);
+    $routes->add('/municipios-admin', 'MunicipiosAdmin::index', ['filter' => 'sessionInvestigador']);
+    $routes->get('/municipios-admin', 'MunicipiosAdmin::index', ['filter' => 'sessionInvestigador']);
+    $routes->add('/archivos-admin', 'MunicipiosAdmin::estadisticas', ['filter' => 'sessionInvestigador']);
+    $routes->get('/archivos-admin', 'MunicipiosAdmin::estadisticas', ['filter' => 'sessionInvestigador']);
     $routes->get('municipios-admin/editMunicipio/(:any)', 'MunicipiosAdmin::edit/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('estadisticas-admin/createMunicipioArchivo', 'MunicipiosAdmin::createMunicipioArchivo',  ['filter' => 'sessionAdministrador']);
-    $routes->post('estadisticas-admin/updateMunicipioArchivo/', 'MunicipiosAdmin::updateMunicipioArchivo/$1',  ['filter' => 'sessionAdministrador']);    
-    
+    $routes->post('estadisticas-admin/updateMunicipioArchivo/', 'MunicipiosAdmin::updateMunicipioArchivo/$1',  ['filter' => 'sessionAdministrador']);
+
     $routes->get('/municipios-admin/editArchivoEstado/(:any)', 'EstadosAdmin::editArchivo/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('estadisticas-admin/createEstadoArchivo', 'EstadosAdmin::createEstadoArchivo',  ['filter' => 'sessionAdministrador']);
-    $routes->post('estadisticas-admin/updateEstadoArchivo/', 'EstadosAdmin::updateEstadoArchivo/$1',  ['filter' => 'sessionAdministrador']);    
-    
+    $routes->post('estadisticas-admin/updateEstadoArchivo/', 'EstadosAdmin::updateEstadoArchivo/$1',  ['filter' => 'sessionAdministrador']);
 });
 
 //Cendoc
-$routes->group('/',['Cendoc' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Cendoc' => 'App\Controllers'], function ($routes) {
     $routes->add('/cendoc', 'Cendoc::index');
     $routes->get('/cendoc/editDoc/(:any)', 'Cendoc::editDoc/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('/cendoc/createDoc', 'Cendoc::createDoc',  ['filter' => 'sessionAdministrador']);
@@ -105,13 +104,12 @@ $routes->group('/',['Cendoc' => 'App\Controllers'], function($routes){
     // Categorias
     $routes->post('cendoc/createCategoriaDoc', 'Cendoc::createCategoriaDoc',  ['filter' => 'sessionAdministrador']);
     $routes->get('cendoc/editCategoriaCendoc/(:any)', 'Cendoc::edit/$1',  ['filter' => 'sessionAdministrador']);
-    $routes->post('cendoc/updateCategoriaDocumento/', 'Cendoc::updateCategoriaDocumento/$1',  ['filter' => 'sessionAdministrador']);  
+    $routes->post('cendoc/updateCategoriaDocumento/', 'Cendoc::updateCategoriaDocumento/$1',  ['filter' => 'sessionAdministrador']);
     // Fisicos
     $routes->get('/cendoc/editDocFisico/(:any)', 'Cendoc::editDocFisico/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('/cendoc/createDocFisico', 'Cendoc::createDocFisico',  ['filter' => 'sessionAdministrador']);
     $routes->post('/cendoc/updateDocFisico', 'Cendoc::updateDocFisico/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('/cendoc/agregarVisitaCendocDigital', 'Cendoc::agregarVisitaCendocDigital');
-    
 });
 $routes->get('/centro_documental', 'Centro_documental::ByNombre');
 $routes->post('/centro-documental', 'Centro_documental::ByNombre');
@@ -124,11 +122,28 @@ $routes->post('/centro-documental', 'Centro_documental::ByNombre');
 //     $routes->get('/a', 'BancoDatos::a'); // Replace 'a' with your actual method name in BancoDatos controller
 // });
 
-$routes->get('/banco-datos', 'BancoDatos::index');
-$routes->post('/banco-datos/create-categoria', 'BancoDatos::createCategoria');
+$routes->get('/banco-datos', 'BancoDatos::index', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/create-categoria', 'BancoDatos::createCategoria', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/create-subcategoria', 'BancoDatos::createSubcategoria', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/create-region', 'BancoDatos::createRegion');
+$routes->post('/banco-datos/create-doc', 'BancoDatos::createDocBanco');
+$routes->get('/banco-datos/editar-doc/(:any)', 'BancoDatos::editDocumento/$1', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/editar-doc/(:any)', 'BancoDatos::editDocumentoPost/$1', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/editar-categoria/(:any)', 'BancoDatos::editCategoria/$1', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/editar-categoria/(:any)', 'BancoDatos::editCategoriaPost/$1', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/editar-subcategoria/(:any)', 'BancoDatos::editSubcategoria/$1', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/editar-subcategoria/(:any)', 'BancoDatos::editSubcategoriaPost/$1', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/editar-region/(:any)', 'BancoDatos::editRegion/$1', ['filter' =>  'sessionInvestigador']);
+$routes->post('/banco-datos/editar-region/(:any)', 'BancoDatos::editRegionPost/$1', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/get-subcategorias', 'BancoDatos::getSubcategoriasOptions');
+$routes->get('/banco-datos/get-doc-details', 'BancoDatos::getDocDetails', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/browse', 'BancoDatos::browseCategories', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/browse/search', 'BancoDatos::browseDocumentsSearch', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/browse/categorias/(:any)', 'BancoDatos::browseSubcategories/$1', ['filter' =>  'sessionInvestigador']);
+$routes->get('/banco-datos/browse/subcategorias/(:any)', 'BancoDatos::browseDocuments/$1', ['filter' =>  'sessionInvestigador']);
 
 // Revista
-$routes->get('/revistas', 'Revistas::index');
+$routes->get('/revistass', 'Revistas::index');
 $routes->get('/revistas/(:any)', 'Revistas::verRevista/$1');
 $routes->get('/revistas-admin', 'Revistas::revistasAdmin');
 $routes->post('/revistas-admin/crearRevista', 'Revistas::crearRevista',  ['filter' => 'sessionAdministrador']);
@@ -154,11 +169,10 @@ $routes->post('estadisticas', 'EstadisticasIndicadores::ByNombre');
 $routes->get('/estadisticasEstado/(:any)', 'Estadisticas::estado/$1');
 
 //Propuesta 
-$routes->group('/', ['Acciones' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Acciones' => 'App\Controllers'], function ($routes) {
     $routes->add('/accion', 'Acciones::index');
     $routes->post('propuesta/create/', 'Acciones::create');
     $routes->post('propuesta/contact/', 'Acciones::contacto');
-
 });
 
 // Interfaz
@@ -167,7 +181,7 @@ $routes->post('/configs/updateConfig', 'InterfazController::updateConfig/$1',  [
 $routes->post('/configs/createConfig', 'InterfazController::createConfig',  ['filter' => 'sessionAdministrador']);
 
 //Apoyos y Servicios 
-$routes->group('/', ['Apoyos' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Apoyos' => 'App\Controllers'], function ($routes) {
     $routes->add('/apoyos_servicios', 'Apoyos::index');
     $routes->post('apoyos/buscar', 'Apoyos::Buscar');
     $routes->add('/apoyosAdmin', 'ApoyosAdmin::Index');
@@ -186,41 +200,37 @@ $routes->group('/', ['Apoyos' => 'App\Controllers'], function($routes){
     $routes->post('apoyosAdmin/updateNormatividad/', 'ApoyosAdmin::updateNormatividad/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('apoyosAdmin/updateApoyo/', 'ApoyosAdmin::updateApoyo/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('apoyosAdmin/createNormatividad', 'ApoyosAdmin::createNormatividad',  ['filter' => 'sessionAdministrador']);
-   
-
 });
 
 //Juventudes
-$routes->group('/', ['Consejo' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Consejo' => 'App\Controllers'], function ($routes) {
     $routes->add('/consejo', 'Consejo::index');
-
 });
 
 //Directorio
-$routes->group('/', ['Directorio' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Directorio' => 'App\Controllers'], function ($routes) {
     $routes->add('/directorio', 'Directorio::index');
-
 });
 
 
 //Investigaciones
-$routes->group('/',['Investigaciones' => 'App\Controllers'], function($routes){
-    
+$routes->group('/', ['Investigaciones' => 'App\Controllers'], function ($routes) {
+
     $routes->add('/centro-documental', 'Centro_documental::index');
     $routes->add('/centro-documental-fisico', 'Centro_documental::fisico');
     $routes->get('/centro-documental-fisico', 'Centro_documental::fisico');
     $routes->post('/centro-documental-fisico/nombre', 'Centro_documental::FisicoByNombre');
     $routes->post('/centro-documental-fisico/clave', 'Centro_documental::FisicoByClave');
     $routes->post('/centro-documental-fisico/editorial', 'Centro_documental::FisicoByEditorial');
-    
-    
+
+
     $routes->add('/red-investigadores', 'Red_Investigadores::index');
     $routes->add('/red-investigadores-edit', 'Red_investigadores_edit::index',  ['filter' => 'sessionAdministrador']);
 });
 
 
 //Temas 
-$routes->group('/',['Tema' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Tema' => 'App\Controllers'], function ($routes) {
     $routes->add('/temas', 'Tema::index');
     $routes->post('temas/createTema', 'Tema::createTema',  ['filter' => 'sessionAdministrador']);
     $routes->get('/temas/edit/(:any)', 'Tema::edit/$1',  ['filter' => 'sessionAdministrador']);
@@ -228,7 +238,6 @@ $routes->group('/',['Tema' => 'App\Controllers'], function($routes){
     $routes->get('/temas_admin_edit', 'Tema_edit::index',  ['filter' => 'sessionAdministrador']);
     $routes->add('/temasView', 'Temass::index');
     $routes->post('temasView/Search', 'Temass::Search');
-
 });
 
 //Estadisticas e indicadores 
@@ -237,7 +246,7 @@ $routes->post('/estadisticasCendoc', 'Cendoc::ByNombre');
 $routes->get('/estadisticas e indicadores', 'EstadisticasIndicadores::index');
 
 //Encuestas
-$routes->group('/',['Encuesta' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Encuesta' => 'App\Controllers'], function ($routes) {
     $routes->add('/encuestas-admin', 'EncuestasAdmin::index');
     $routes->get('/encuestas-admin/edit/(:any)', 'EncuestasAdmin::edit/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('/encuestas-admin/update/', 'EncuestasAdmin::update/$1',  ['filter' => 'sessionAdministrador']);
@@ -255,12 +264,10 @@ $routes->group('/',['Encuesta' => 'App\Controllers'], function($routes){
     $routes->post('encuestas-admin/updateTestimonio2/', 'Home::updateT2/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('encuestas-admin/createTestimonio', 'Home::createT');
     $routes->get('encuestas-admin/editTestimonio/(:any)', 'Home::editT/$1',  ['filter' => 'sessionAdministrador']);
-   
-   
 });
 
 //Investigadores
-$routes->group('/',['Investigadores' => 'App\Controllers'], function($routes){
+$routes->group('/', ['Investigadores' => 'App\Controllers'], function ($routes) {
     $routes->add('/integrantes-investigadores', 'Integrantes_investigadores::index');
     $routes->get('integrantes-investigadores/edit/(:any)', 'Red_investigadores_edit::editInv/$1',  ['filter' => 'sessionAdministrador']);
     $routes->post('integrantes-investigadores/createInv', 'Red_investigadores_edit::createInv',  ['filter' => 'sessionAdministrador']);
@@ -274,7 +281,6 @@ $routes->group('/',['Investigadores' => 'App\Controllers'], function($routes){
     $routes->post('comisiones-investigadores/createComTrab', 'Red_investigadores_edit::createComTrab',  ['filter' => 'sessionAdministrador']);
     $routes->post('comisiones-investigadores/update/', 'Red_investigadores_edit::updateComTrab/$1',  ['filter' => 'sessionAdministrador']);
     $routes->get('/edit-comisiones', 'Edit-comisiones::index');
-    
 });
 
 //Testimonios 

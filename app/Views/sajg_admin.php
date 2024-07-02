@@ -3,26 +3,6 @@
 
 <head>
     <title>Administrador</title>
-<<<<<<< HEAD
-=======
-    <link rel="icon" href="images/gto2.png">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="public/plugins/bootstrap/bootstrap.min.css">
-    <!-- Ionicons Fonts Css -->
-    <link rel="stylesheet" href="public/plugins/ionicons/ionicons.min.css">
-    <!-- animate css -->
-    <link rel="stylesheet" href="public/plugins/animate-css/animate.css">
-    <!-- Hero area slider css-->
-    <link rel="stylesheet" href="public/plugins/slider/slider.css">
-    <!-- slick slider -->
-    <link rel="stylesheet" href="public/plugins/slick/slick.css">
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="public/plugins/facncybox/jquery.fancybox.css">
-    <!-- hover -->
-    <link rel="stylesheet" href="public/plugins/hover/hover-min.css">
->>>>>>> 81887ee7fab11282fcb26a2a3b80edd02381bf75
 
     <?= view('components/HeadAdmin.php'); ?>
 
@@ -294,84 +274,6 @@
                                 </table>
                             </div>
                         </div>
-<<<<<<< HEAD
-=======
-                        <div class="form-group">
-                            <label class="col-form-label">Cargo:</label>
-                            <input type="text" class="form-control" maxlength="800" id="cargo" name="cargo" cols="30" rows="1" required></input>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label class="col-form-label" for="cargo">Cargo:</label>
-                            <select class="form-control" id="cargo" name="cargo" required>
-                                <option value="" selected disabled>Selecciona un cargo</option>
-                                <option value="Gobernador del Estado">Gobernador del Estado</option>
-                                <option value="Director General de JuventudEsGTO">Director General de JuventudEsGTO</option>
-                                <option value="Presidente del Consejo Directivo de JuventudEsGTO">Presidente del Consejo Directivo de JuventudEsGTO</option>
-                                <option value="Titular de la Secretaría de Gobierno">Titular de la Secretaría de Gobierno</option>
-                                <option value="Titular de la Secretaría de Desarrollo Económico Sustentable">Titular de la Secretaría de Desarrollo Económico Sustentable</option>
-                                <option value="Titular de la Secretaría de Salud">Titular de la Secretaría de Salud</option>
-                                <option value="Titular de la Secretaría de Educación">Titular de la Secretaría de Educación</option>
-                                <option value="Director General de la Comisión de Deporte del Estado">Director General de la Comisión de Deporte del Estado</option>
-                                <option value="Representante Municipal">Representante Municipal</option>
-                                <option value="Representante de la Comisión Estatal para la Planeación de la Educación Media Superior">Representante de la Comisión Estatal para la Planeación de la Educación Media Superior</option>
-                                <option value="Representante de la Comisión Estatal para la Planeación de la Educación Superior">Representante de la Comisión Estatal para la Planeación de la Educación Superior</option>
-                                <option value="Representante de Organización Juvenil">Representante de Organización Juvenil</option>
-                                <option value="Representante del Sector Económico y Productivo">Representante del Sector Económico y Productivo</option>
-                                <option value="Representante de Organismo de la Sociedad">Representante de Organismo de la Sociedad</option>
-                                <option value="Joven Destacado">Joven Destacado</option>
-                            </select>
-                        </div> -->
-                        
-                        <div class="form-group">
-                            <label class="col-form-label" for="cargo">Cargo Consejo:</label>
-                            <select class="form-control" id="cargo_consejo" name="cargo_consejo" required>
-                                <option value="" selected disabled>Selecciona un cargo de consejo</option>
-                                <option value="Presidente">Presidente</option>
-                                <option value="Secretario Técnico">Secretario Técnico</option>
-                                <option value="Consejero">Consejero</option>
-                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-form-label" for="importancia">Importancia:</label>
-                            <select class="form-control" id="importancia" name="importancia" required>
-                                <option value="" selected disabled>Selecciona nivel de importancia</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-form-label">Agregar Imagen del integrante:</label>
-                            <input class="form-control" id="imagen" name="imagen" type="file" style="color:#4469C5;" /><br />
-                        </div>
-                        <div class="form-group">
-                            <label class="col-form-label">Seleccione el estatus:</label>
-                            <select class="form-select form-control" id="estatus" name="estatus">
-                                <option selected disabled>Seleccione un estatus</option>
-                                <option value="A">Activo</option>
-                                <option value="B">Inactivo</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-success">Guardar</button>
->>>>>>> 81887ee7fab11282fcb26a2a3b80edd02381bf75
                     </div>
 
                 </div>

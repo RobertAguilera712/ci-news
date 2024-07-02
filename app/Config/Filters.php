@@ -23,9 +23,9 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'sessionInvestigador' =>\App\Filters\sessionInvestigador::class,
-        'sessionAdministrador' =>\App\Filters\sessionAdministrador::class,
-        'sessionEncuestas' =>\App\Filters\sessionEncuestas::class,
+        'sessionInvestigador' => \App\Filters\sessionInvestigador::class,
+        'sessionAdministrador' => \App\Filters\sessionAdministrador::class,
+        'sessionEncuestas' => \App\Filters\sessionEncuestas::class,
     ];
 
     /**
@@ -72,23 +72,20 @@ class Filters extends BaseConfig
      * @var array
      */
     public $filters = [
-        "sessionInvestigador" =>[
-            "before"=>[
-                "/estudios"
+        "sessionInvestigador" => [
+            "before" => [
+                "/banco-datos"
             ]
-            ],
-            "sessionAdministrador" =>[
-                "before"=>[
-                    "/administrador"
-                ]
-                ],
-                "sessionEncuestas" =>[
-                    "before"=>[
-                        "/encuestas-admin"
-                    ]
-                ]
+        ],
+        "sessionAdministrador" => [
+            "before" => [
+                "/administrador"
+            ]
+        ],
+        "sessionEncuestas" => [
+            "before" => [
+                "/encuestas-admin"
+            ]
+        ]
     ];
-
-
-
 }
