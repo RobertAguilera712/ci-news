@@ -18,6 +18,7 @@ $fileIcons = [
 
 <body>
 
+    <?= view('components/NavbarAdmin.php'); ?>
 
     <section style="margin-top: 10vh;" class="container">
         <h2>Banco de datos Busqueda</h2>

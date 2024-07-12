@@ -1,2 +1,37 @@
 git diff --name-only --cached > staged_files.txt
 zip -@ staged_files.zip < staged_files.txt           
+
+
+comparatives use
+
+* We use the comparative form to show the difference between two people or things.
+Basketball is livelier than baseball. 
+Soccer is more popular than boxing.
+* We use than before the second item of comparison.
+European children train more rigorously in soccer than American children.
+* We can use less to make a comparison.
+Soccer is less popular than football in the U.S.
+* We can put more, less, fewer, better, worse, and other comparative forms before a noun.
+College athletes have less experience than professional athletes.
+* We use less with non count nouns; we use fewer with count nouns.
+Soccer players have fewer injuries than football players.
+* We can put more, less, better, worse, and other comparative forms after a verb (phrase)
+My sister likes soccer more than I do.
+You play basketball better than your brother does.
+* Much, a lot, or a little can come before a comparative form.
+Interest in soccer is much lower in the U.S. than it is in other countries.
+I like soccer a little better than I like baseball.
+* We can use two comparisons in one sentence to show cause and result.
+The more they practice, the better they play.
+The older you are, the harder it is to learn a new sport.
+
+Notes
+1. Omit than if the second item of comparison is not included.
+Basketball is popular in the U.S., but football is more popular.
+2. When a pronoun follows than, the correct form is the subject pronoun (he,
+she, I, etc.). Usually an auxiliary verb follows (is, do, did, can, etc.).
+Informally, many Americans use the object pronoun (him, her, me, etc.) after
+than without an auxiliary verb.
+
+Formal: You are taller than I am. Formal: I can play soccer better than he can.
+InFormal: You are taller than me. InFormal: I can play soccer better than him.

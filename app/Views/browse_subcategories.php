@@ -8,6 +8,7 @@
 
 <body>
 
+    <?= view('components/NavbarAdmin.php'); ?>
 
     <section style="margin-top: 10vh;" class="container">
         <h2>Banco de datos</h2>

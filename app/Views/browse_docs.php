@@ -18,6 +18,7 @@ $fileIcons = [
 
 <body>
 
+    <?= view('components/NavbarAdmin.php'); ?>
 
     <section style="margin-top: 10vh;" class="container">
         <h2>Banco de datos</h2>
@@ -155,31 +156,35 @@ $fileIcons = [
         <div class="row">
             <?php
             foreach ($docs as $doc) : ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <a href="<?php echo base_url('documentos_banco/' . $doc['id'] . '/' . $doc['archivo']) ?>" download="<?php $doc['archivo'] ?>" style="text-decoration: none; color: inherit;">
-                        <section class="card mx-auto mb-3 px-3">
-                            <?php
-                            // Example file extension saved in the variable
-                            $fileType = $doc["tipo"]; // Assuming $document is an object with the 'tipo' attribute
 
-                            // Default icon if file type is not found
-                            $iconPath = base_url('images/icons/folder.png');
+                <?php if ($doc['estatus'] == 'A') : ?>
+                    <div class="col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
+                        <a href="<?php echo base_url('documentos_banco/' . $doc['id'] . '/' . $doc['archivo']) ?>" download="<?php $doc['archivo'] ?>" style="text-decoration: none; color: inherit;">
+                            <section class="card mx-auto mb-3 px-3">
+                                <?php
+                                // Example file extension saved in the variable
+                                $fileType = $doc["tipo"]; // Assuming $document is an object with the 'tipo' attribute
 
-                            if (array_key_exists($fileType, $fileIcons)) {
-                                $iconPath = $fileIcons[$fileType];
-                            }
-                            ?>
-                            <img src="<?= $iconPath ?>" class="card-img-top">
-                            <div class="card-body p-0">
-                                <h5 class="card-title text-center"><?= $doc["nombre"] ?></h5>
-                            </div>
-                            <div class="card-footer">
-                                <a hx-get="/banco-datos/get-doc-details?id_doc=<?= $doc['id'] ?>" hx-target="#detallesBody" hx-trigger="click" role="button" data-toggle="modal" data-target="#detallesDoc" class="btn btn-outline-primary d-block" rel="noopener"><i class="bi bi-info-circle"></i> Detalles</a>
-                            </div>
-                        </section>
-                    </a>
+                                // Default icon if file type is not found
+                                $iconPath = base_url('images/icons/folder.png');
 
-                </div>
+                                if (array_key_exists($fileType, $fileIcons)) {
+                                    $iconPath = $fileIcons[$fileType];
+                                }
+                                ?>
+                                <img src="<?= $iconPath ?>" class="card-img-top">
+                                <div class="card-body p-0">
+                                    <h5 class="card-title text-center"><?= $doc["nombre"] ?></h5>
+                                </div>
+                                <div class="card-footer">
+                                    <a hx-get="/banco-datos/get-doc-details?id_doc=<?= $doc['id'] ?>" hx-target="#detallesBody" hx-trigger="click" role="button" data-toggle="modal" data-target="#detallesDoc" class="btn btn-outline-primary d-block" rel="noopener"><i class="bi bi-info-circle"></i> Detalles</a>
+                                </div>
+                            </section>
+                        </a>
+
+                    </div>
+                <?php endif ?>
+
             <?php endforeach; ?>
 
         </div>

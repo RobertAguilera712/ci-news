@@ -1,0 +1,33 @@
+git diff --name-only --cached > staged_files.txt
+zip -@ staged_files.zip < staged_files.txt           
+
+
+Infinitives overview
+
+An infinitive is to +the base form of the verb (e.g., to go). An infinitive can
+be used in the following ways.
+
+* After certain verbs
+Carnegie wanted to help others
+* After the object of the verb
+He wanted rich people to give away their money.
+* After certain adjectives
+I'm happy to help.
+* after certain expressions that begin with it
+It's important to help others.
+* as the subject of a sentence
+To help others makes a person feel good.
+* To show purpose
+Do you volunteer your time in order to help others?
+* after expressions with too and enough
+He's old enough to help. 
+She's too young to help.
+
+Notes
+1. In a sentence with two infinitives connected by and or or, the second to is usually omitted.
+I want to make money and help others.
+You can choose to volunteer time or donate money.
+2. Put not before an infinitive to make it negative.
+Carnegie decided not to die rich.
+3. For a passive infinitive, we use to be +past participle.
+Everyone wants to be given an opportunity to succeed
